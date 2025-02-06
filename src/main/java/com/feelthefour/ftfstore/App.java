@@ -6,6 +6,7 @@ import com.stripe.Stripe;
 import com.stripe.model.checkout.Session;
 import com.stripe.param.checkout.SessionCreateParams;
 
+import io.github.cdimascio.dotenv.Dotenv;
 import io.javalin.Javalin;
 import io.javalin.http.HttpStatus;
 import io.javalin.http.staticfiles.Location;
@@ -19,7 +20,8 @@ public class App {
 
 	public static void main(String[] args) {
 		// This is your test secret API key.
-		Stripe.apiKey = "";
+		Dotenv dotenv = Dotenv.load();
+		Stripe.apiKey = dotenv.get("STRIPE_API_KEY");
 
 		var app = Javalin.create(config -> {
 			config.staticFiles.add("public", Location.EXTERNAL);
