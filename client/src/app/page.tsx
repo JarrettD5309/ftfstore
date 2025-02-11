@@ -1,16 +1,15 @@
 import Link from 'next/link';
 
-import ftfLogo from "../../public/images/FTF_logo1.jpg";
 import ftf001Label from "../../public/images/FTF_001_front-center.jpg";
 import styles from "./page.module.css";
+import LogoHeader from './components/logo-header';
+import CartNav from './components/cart-nav';
 
 export default function Home() {
   return (
     <>
-      <header>
-        <img className="logo" src={ftfLogo.src} alt="Feel The Four Records logo" />
-        <h1>Feel The Four Records</h1>
-      </header>
+    <CartNav />
+    <LogoHeader displayLogo={true} />
 
       <main>
 

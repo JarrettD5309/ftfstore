@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./reset.css";
 import "./globals.css";
 import localFont from 'next/font/local';
+import { StoreProvider } from "./storeProvider/store-provider";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -64,7 +65,7 @@ export default function RootLayout({
         <script src="https://js.stripe.com/v3/"></script>
       </head>
       <body>
-        {children}
+        <StoreProvider>{children}</StoreProvider>
       </body>
     </html>
   );

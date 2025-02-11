@@ -1,0 +1,6 @@
+.cartNav {
+  display: flex;
+  font-size: 1.8rem;
+  justify-content: flex-end;
+  margin-right: 1.3rem;
+}

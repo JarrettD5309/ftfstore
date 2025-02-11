@@ -1,15 +1,16 @@
 import Link from 'next/link';
 import ftf001Label from "../../../public/images/FTF_001_front-center.jpg";
+import LogoHeader from '../components/logo-header';
+import CartNav from '../components/cart-nav';
 
 export default function Releases() {
   return (
     <>
-      <header>
-        <h1>Feel The Four Records</h1>
-      </header>
+      <CartNav />
+      <LogoHeader displayLogo={false} />
 
       <main>
-        <p><Link href="/">{`< HOME`}</Link></p>
+        <p className="padding-left-1_3rem"><Link href="/">{`< HOME`}</Link></p>
         <section className="main-section">
           <h2>Releases</h2>
           <section>

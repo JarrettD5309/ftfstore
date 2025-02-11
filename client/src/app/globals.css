@@ -69,7 +69,6 @@ a.link-button:visited {
   text-decoration: none;
 }
 
-a.link-button:hover,
 a.link-button:active {
   background-color: #fafafa;
   color: black;
@@ -89,8 +88,16 @@ a.link-button:active {
   margin-top: 1rem;
 }
 
+.margin-top-1_5rem {
+  margin-top: 1.5rem;
+}
+
 .margin-top-2rem {
   margin-top: 2rem;
+}
+
+.padding-left-1_3rem {
+  padding-left: 1.3rem;
 }
 
 .release-img {
@@ -120,5 +127,12 @@ a.link-button:active {
   hr {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+}
+
+@media (hover: hover) {
+  a.link-button:hover {
+    background-color: #fafafa;
+    color: black;
   }
 }

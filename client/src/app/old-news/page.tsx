@@ -1,14 +1,15 @@
 import Link from 'next/link';
+import LogoHeader from '../components/logo-header';
+import CartNav from '../components/cart-nav';
 
 export default function OldNews() {
   return (
     <>
-      <header>
-        <h1>Feel The Four Records</h1>
-      </header>
+      <CartNav />
+      <LogoHeader displayLogo={false} />
 
       <main>
-        <p><Link href="/">{`< HOME`}</Link></p>
+        <p className="padding-left-1_3rem"><Link href="/">{`< HOME`}</Link></p>
         <section className="main-section">
           <h2>Old News</h2>
           <p><u>Oct 4, 2024</u><br /><br />34 Trolley's "Relaxation EP" is out now!<br /><br />Order the vinyl and stream the record
