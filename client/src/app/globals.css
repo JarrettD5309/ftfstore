@@ -10,7 +10,6 @@ body {
   margin: 0 auto;
   max-width: 400px;
   padding-bottom: 2.5rem;
-  padding-top: 1rem;
 }
 
 h1 {
@@ -55,6 +54,11 @@ a:visited {
 a:hover,
 a:active {
   color: blueviolet;
+}
+
+a.link-button {
+  font-size: 1.8rem;
+  line-height: 2.2rem;
 }
 
 a.link-button:link,

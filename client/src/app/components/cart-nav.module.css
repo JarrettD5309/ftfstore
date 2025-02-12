@@ -1,6 +1,53 @@
 .cartNav {
+  background-color: black;
   display: flex;
   font-size: 1.8rem;
   justify-content: flex-end;
+  
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  position: sticky;
+  top: 0;
+}
+
+.highlight {
+  border: blueviolet 2px solid !important;
+  outline-width: 2px;
+  outline-offset: 0;
+  outline-color: rgba(138, 43, 236, 0.75);
+  outline-style: solid;
+  animation: animateOutline 2s ease infinite;
+}
+
+.marginRight1dot3rem {
   margin-right: 1.3rem;
+}
+
+@keyframes animateOutline {
+  0% {
+    outline-width: 1px;
+    outline-offset: 0;
+    outline-color: rgba(138, 43, 236, 0);
+  }
+
+  /* 25% {
+    outline-color: rgba(138, 43, 236, 0.45);
+  } */
+
+  /* The animation finishes at 50% */
+  50% {
+    outline-color: rgba(138, 43, 236, 0.90);
+  }
+
+  75% {
+    outline-width: 6px;
+    outline-offset: 3px;
+    outline-color: rgba(138, 43, 236, 0);
+  }
+
+  100% {
+    outline-width: 6px;
+    outline-offset: 3px;
+    outline-color: rgba(102, 102, 102, 0);
+  }
 }

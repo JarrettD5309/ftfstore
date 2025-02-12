@@ -8,8 +8,8 @@ import CartNav from './components/cart-nav';
 export default function Home() {
   return (
     <>
-    <CartNav />
-    <LogoHeader displayLogo={true} />
+      <CartNav />
+      <LogoHeader displayLogo={true} />
 
       <main>
 
@@ -42,9 +42,15 @@ export default function Home() {
               <p>FTF-001</p>
               <p>Released Oct 2024</p>
               <p>Tracklist: <br />1. Relaxation <br />2. Coming For You? <br />3. Go Ahead <br />4. Dream Freedom</p>
-              <p className="margin-top-2rem">ORDER HERE: <a className="link-button"
-                href="https://34trolley.bandcamp.com/album/relaxation-ep" target="_blank"
-                rel="noopener noreferrer">BANDCAMP</a></p>
+              <p className="margin-top-2rem">ORDER HERE:&nbsp;</p>
+                <a className="link-button margin-top-1rem"
+                  href="https://34trolley.bandcamp.com/album/relaxation-ep" target="_blank"
+                  rel="noopener noreferrer">BANDCAMP</a>&nbsp;
+                <a className="link-button"
+                  href="https://34trolley.bandcamp.com/album/relaxation-ep" target="_blank"
+                  rel="noopener noreferrer">BANDCAMP</a>
+  
+              
             </div>
           </section>
 
