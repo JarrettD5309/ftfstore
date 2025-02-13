@@ -10,7 +10,7 @@ export interface StoreItemContext {
 export const StoreContext = createContext<StoreItemContext>({itemsInStore: [], setItemsInStore: () => {}});
 
 export function StoreProvider({ children }: Readonly<{children: React.ReactNode;}>) {
-  const [itemsInStore, setItemsInStore] = useState<StoreItem[]>([new StoreItem('abc',2)]);
+  const [itemsInStore, setItemsInStore] = useState<StoreItem[]>([]);
   const value = {itemsInStore, setItemsInStore};
 
     return (

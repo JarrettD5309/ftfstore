@@ -78,6 +78,21 @@ a.link-button:active {
   color: black;
 }
 
+button.link-like-button {
+  background-color: black;
+  border: #fafafa 2px solid;
+  border-radius: 5px;
+  color: #fafafa;
+  font-size: 1.8rem;
+  line-height: 2.2rem;
+  padding: 1rem 2rem;
+}
+
+button.link-like-button:active {
+  background-color: #fafafa;
+  color: black;
+}
+
 .logo {
   display: block;
   margin: 1.5rem auto;
@@ -138,5 +153,11 @@ a.link-button:active {
   a.link-button:hover {
     background-color: #fafafa;
     color: black;
+  }
+
+  button.link-like-button:hover {
+    background-color: #fafafa;
+    color: black;
+    cursor: pointer;
   }
 }

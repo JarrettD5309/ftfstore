@@ -4,6 +4,7 @@ import ftf001Label from "../../public/images/FTF_001_front-center.jpg";
 import styles from "./page.module.css";
 import LogoHeader from './components/logo-header';
 import CartNav from './components/cart-nav';
+import AddToCartButton from './components/add-to-cart-button';
 
 export default function Home() {
   return (
@@ -46,9 +47,7 @@ export default function Home() {
                 <a className="link-button margin-top-1rem"
                   href="https://34trolley.bandcamp.com/album/relaxation-ep" target="_blank"
                   rel="noopener noreferrer">BANDCAMP</a>&nbsp;
-                <a className="link-button"
-                  href="https://34trolley.bandcamp.com/album/relaxation-ep" target="_blank"
-                  rel="noopener noreferrer">BANDCAMP</a>
+                <AddToCartButton itemID='abc' />
   
               
             </div>
