@@ -44,12 +44,12 @@ export default function Home() {
               <p>Released Oct 2024</p>
               <p>Tracklist: <br />1. Relaxation <br />2. Coming For You? <br />3. Go Ahead <br />4. Dream Freedom</p>
               <p className="margin-top-2rem">ORDER HERE:&nbsp;</p>
-                <a className="link-button margin-top-1rem"
-                  href="https://34trolley.bandcamp.com/album/relaxation-ep" target="_blank"
-                  rel="noopener noreferrer">BANDCAMP</a>&nbsp;
-                <AddToCartButton itemID='abc' />
-  
-              
+              <a className="link-button margin-top-1rem"
+                href="https://34trolley.bandcamp.com/album/relaxation-ep" target="_blank"
+                rel="noopener noreferrer">BANDCAMP</a>&nbsp;
+              <AddToCartButton itemID='ftf001' />
+
+
             </div>
           </section>
 
