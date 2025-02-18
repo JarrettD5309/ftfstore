@@ -1,5 +1,10 @@
 package com.feelthefour.ftfstore;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 // import java.nio.file.Paths;
 
 import com.stripe.Stripe;
@@ -17,6 +22,8 @@ import io.javalin.http.staticfiles.Location;
  */
 public class App {
   private static int PORT = 7070;
+  private static String PRICE = "price";
+  private static String QUANTITY = "quantity";
 
   public static void main(String[] args) {
     // This is your test secret API key.
@@ -24,14 +31,44 @@ public class App {
     Stripe.apiKey = dotenv.get("STRIPE_API_KEY");
 
     var app = Javalin.create(config -> {
-      config.staticFiles.add("public", Location.EXTERNAL);
+      config.staticFiles.add("out", Location.EXTERNAL);
     });
 
     app.post("/create-checkout-session", cxt -> {
-      String priceID1 = cxt.formParam("product1price");
-      Long quantity1 = Long.valueOf(cxt.formParam("product1quantity"));
-      String priceID2 = cxt.formParam("product2price");
-      Long quantity2 = Long.valueOf(cxt.formParam("product2quantity"));
+
+      Map<String, List<String>> formParams = cxt.formParamMap();
+
+      ArrayList<SessionCreateParams.LineItem> productLineItemList = new ArrayList<>();
+
+      boolean priceIDFound = false;
+      boolean quantityFound = false;
+      HashMap<String, String> tempProductMap = new HashMap<>();
+      int i = 0;
+
+      for (String param : formParams.keySet()) {
+
+        if (param.split("_")[0].equals(PRICE) && param.split("_")[1].equals(String.valueOf(i))) {
+          priceIDFound = true;
+          tempProductMap.put(PRICE, cxt.formParam(param));
+        }
+
+        if (param.split("_")[0].equals(QUANTITY) && param.split("_")[1].equals(String.valueOf(i))) {
+          quantityFound = true;
+          tempProductMap.put(QUANTITY, cxt.formParam(param));
+        }
+
+        if (priceIDFound == true && quantityFound == true) {
+          productLineItemList.add(
+              SessionCreateParams.LineItem.builder()
+                  .setQuantity(Long.valueOf(tempProductMap.get(QUANTITY)))
+                  .setPrice(tempProductMap.get(PRICE))
+                  .build());
+          priceIDFound = false;
+          quantityFound = false;
+          tempProductMap.clear();
+          i++;
+        }
+      }
 
       String YOUR_DOMAIN = "http://localhost:" + PORT;
       SessionCreateParams params = SessionCreateParams.builder()
@@ -42,16 +79,7 @@ public class App {
               SessionCreateParams.AutomaticTax.builder()
                   .setEnabled(true)
                   .build())
-          .addLineItem(
-              SessionCreateParams.LineItem.builder()
-                  .setQuantity(quantity1)
-                  .setPrice(priceID1)
-                  .build())
-          .addLineItem(
-              SessionCreateParams.LineItem.builder()
-                  .setQuantity(quantity2)
-                  .setPrice(priceID2)
-                  .build())
+          .addAllLineItem(productLineItemList)
           .build();
       Session session = Session.create(params);
 

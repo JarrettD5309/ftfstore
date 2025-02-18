@@ -17,21 +17,21 @@ export default function Cart() {
         <section className="main-section">
           <h2>Shopping Cart</h2>
           <form action="/create-checkout-session" method="POST">
-            {itemsInStore.map(item => {
+            {itemsInStore.map((item, i) => {
               const product = getProducts().find(product => product.productInfo.itemID === item.itemID);
               return (
                 <fieldset key={item.itemID}>
-                  <input type="hidden" id="priceID" name="product1price" value="price_1QoXfKAthGHyEEe1h7ScHrT3" />
+                  <input type="hidden" id="priceID" name={`price_${i}`} value={getStripePriceID(item.itemID)} />
                   <label htmlFor="quantity">Quantity (between 1 and 5)</label>
-                  <input type="number" id="quantity" name="product1quantity" min="1" max="5" />
+                  <input type="number" id="quantity" name={`quantity_${i}`} min="1" max="5" />
                 </fieldset>
               )
 
             })}
             <fieldset>
-              <input type="hidden" id="priceID" name="product2price" value="price_1Qpxb6AthGHyEEe1ZWht45dp" />
+              <input type="hidden" id="priceID" name="price_1" value="price_1Qpxb6AthGHyEEe1ZWht45dp" />
               <label htmlFor="quantity">Quantity (between 1 and 5)</label>
-              <input type="number" id="quantity" name="product2quantity" min="1" max="5" />
+              <input type="number" id="quantity" name="quantity_1" min="1" max="5" />
             </fieldset>
             <button className="link-like-button" type="submit" id="checkout-button">Checkout</button>
           </form>
