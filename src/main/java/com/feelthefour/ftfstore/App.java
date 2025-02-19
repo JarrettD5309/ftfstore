@@ -47,6 +47,11 @@ public class App {
 
       for (String param : formParams.keySet()) {
 
+        if(!param.split("_")[1].equals(String.valueOf(i))) {
+          cxt.status(HttpStatus.BAD_REQUEST);
+          return;
+        }
+
         if (param.split("_")[0].equals(PRICE) && param.split("_")[1].equals(String.valueOf(i))) {
           priceIDFound = true;
           tempProductMap.put(PRICE, cxt.formParam(param));
