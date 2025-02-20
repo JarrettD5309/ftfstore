@@ -1,6 +1,9 @@
 .fieldsetStyle {
-  border: 2px solid white;
-  padding: 1rem;
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-between;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .imageTile {
@@ -14,6 +17,7 @@
   border-radius: 2px;
   font-size: 1.5rem;
   height: 3rem;
+  margin-top: 1.5rem;
   text-align: center;
   width: 5rem;
 }
@@ -26,4 +30,8 @@ input.numberInput[type=number]::-webkit-inner-spin-button {
   font-size: 1.8rem;
   line-height: 2.2rem;
   padding-right: 1rem;
+}
+
+.priceColumn {
+  margin-left: auto;
 }

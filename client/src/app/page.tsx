@@ -48,6 +48,7 @@ export default function Home() {
                 href="https://34trolley.bandcamp.com/album/relaxation-ep" target="_blank"
                 rel="noopener noreferrer">BANDCAMP</a>&nbsp;
               <AddToCartButton itemID='ftf001' />
+              <AddToCartButton itemID='ftf002' />
 
 
             </div>

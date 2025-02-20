@@ -2,14 +2,16 @@ import ftf001Label from '../../../public/images/FTF_001_front-center.jpg'
 
 export class Product {
   private _itemID: string;
-  private _name: string;
+  private _artist: string;
+  private _title: string;
   private _description: string;
   private _image: string;
-  private _price: string;
+  private _price: number;
 
-  constructor(itemID: string, name: string, description: string, image: string, price: string) {
+  constructor(itemID: string, artist: string, title: string, description: string, image: string, price: number) {
     this._itemID = itemID;
-    this._name = name;
+    this._artist = artist;
+    this._title = title;
     this._description = description;
     this._image = image;
     this._price = price;
@@ -18,7 +20,8 @@ export class Product {
   get productInfo() {
     return {
       itemID: this._itemID,
-      name: this._name,
+      artist: this._artist,
+      title: this._title,
       description: this._description,
       image: this._image,
       price: this._price
@@ -29,10 +32,19 @@ export class Product {
 const PRODUCTS: Product[] = [
   new Product(
     'ftf001',
-    '34 Trolley - Relaxation EP 12"',
+    '34 Trolley',
+    'Relaxation EP 12"',
     'First release',
     ftf001Label.src,
-    '$20'
-  )
+    20.00
+  ),
+  new Product(
+    'ftf002',
+    'Countach',
+    'Mechanical Deathwish Mixtape',
+    'First Mixtape',
+    ftf001Label.src,
+    20.00
+  ),
 ];
 export const getProducts = () => PRODUCTS;

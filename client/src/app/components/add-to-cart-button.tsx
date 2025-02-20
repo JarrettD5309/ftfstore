@@ -12,7 +12,7 @@ export default function AddToCartButton(props: { itemID: string }) {
     <button
       className={`link-like-button margin-top-1rem ` + styles.buttonMinWidth}
       onClick={() => {
-        setItemsInStore([new StoreItem(props.itemID, 1)]);
+        setItemsInStore([...itemsInStore, new StoreItem(props.itemID, 1)]);
         activeAddTimer();
       }}
     >
