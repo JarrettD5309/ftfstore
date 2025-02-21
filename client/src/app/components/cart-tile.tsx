@@ -1,11 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { StoreItem } from "../utils/classes";
 import { getProducts } from "../utils/products";
 import { getStripePriceID } from "../utils/stripe-info";
 
 import styles from './cart-tile.module.css';
+import { StoreContext } from "../storeProvider/store-provider";
 
 export default function CartTile(props: { item: StoreItem, i: number }) {
+  let { itemsInStore, setItemsInStore } = useContext(StoreContext);
   const [quantity, setQuantity] = useState(props.item.quantity.toString());
   const product = getProducts().find(product => product.productInfo.itemID === props.item.itemID);
   if (!product) {
@@ -32,7 +34,7 @@ export default function CartTile(props: { item: StoreItem, i: number }) {
           value={quantity}
           onChange={e => {
             setQuantity(e.target.value);
-            props.item.quantity = parseInt(e.target.value);
+            setItemsInStore(setItems(parseInt(e.target.value)));
           }}
         />
       </div>
@@ -41,4 +43,11 @@ export default function CartTile(props: { item: StoreItem, i: number }) {
       </div>
     </fieldset>
   )
+
+  function setItems(quantity: number) {
+    const newArray = [...itemsInStore];
+    const index = newArray.findIndex(item => item.itemID === props.item.itemID);
+    newArray[index].quantity = quantity;
+    return newArray;
+  }
 }

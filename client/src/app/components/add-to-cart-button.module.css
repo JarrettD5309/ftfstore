@@ -1,3 +1,8 @@
 .buttonMinWidth {
   min-width: 16.5rem;
 }
+
+.linkStyle {
+  border: blueviolet 2px solid !important;
+  min-width: 12.1rem;
+}
