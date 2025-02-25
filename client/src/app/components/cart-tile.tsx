@@ -1,3 +1,4 @@
+"use client";
 import { useContext, useState } from "react";
 import { StoreItem } from "../utils/classes";
 import { getProducts } from "../utils/products";
@@ -30,24 +31,31 @@ export default function CartTile(props: { item: StoreItem, i: number }) {
           type="number"
           id="quantity"
           name={`quantity_${props.i}`}
-          min="1" max="5"
+          min="1" max="10"
           value={quantity}
           onChange={e => {
             setQuantity(e.target.value);
             setItemsInStore(setItems(parseInt(e.target.value)));
           }}
         />
+        <button className={styles.removeButton} onClick={removeItem}>Remove</button>
       </div>
       <div className={styles.priceColumn}>
         <p>${product?.productInfo.price * props.item.quantity}</p>
       </div>
     </fieldset>
-  )
+  );
 
   function setItems(quantity: number) {
     const newArray = [...itemsInStore];
     const index = newArray.findIndex(item => item.itemID === props.item.itemID);
     newArray[index].quantity = quantity;
     return newArray;
+  }
+
+  function removeItem() {
+    let newArray = [...itemsInStore];
+    newArray = newArray.filter(item => item.itemID != props.item.itemID);
+    setItemsInStore(newArray);
   }
 }

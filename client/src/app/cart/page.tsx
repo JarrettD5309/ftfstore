@@ -6,6 +6,7 @@ import { StoreContext } from '../storeProvider/store-provider';
 import CartTile from '../components/cart-tile';
 import { getProducts } from '../utils/products';
 import style from './cart.module.css';
+import { StoreItem } from '../utils/classes';
 
 export default function Cart() {
   let { itemsInStore, setItemsInStore } = useContext(StoreContext);

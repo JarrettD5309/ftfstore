@@ -2,8 +2,8 @@
   display: flex;
   gap: 1.5rem;
   justify-content: space-between;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .imageTile {
@@ -17,7 +17,7 @@
   border-radius: 2px;
   font-size: 1.5rem;
   height: 3rem;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   text-align: center;
   width: 5rem;
 }
@@ -34,4 +34,19 @@ input.numberInput[type=number]::-webkit-inner-spin-button {
 
 .priceColumn {
   margin-left: auto;
+}
+
+.removeButton {
+  border: 0;
+  background-color: transparent;
+  color: #fff;
+  display: block;
+  font-size: 1.4rem;
+  margin-top: .7rem;
+  padding: 0;
+  cursor: pointer;
+}
+
+.removeButton:hover {
+  text-decoration: underline;
 }
