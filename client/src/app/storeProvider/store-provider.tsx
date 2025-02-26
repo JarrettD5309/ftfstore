@@ -1,21 +1,24 @@
-"use client"
+"use client";
 import { createContext, useEffect, useState } from "react";
 import { StoreItem } from "../utils/classes";
 
 export interface StoreItemContext {
   itemsInStore: StoreItem[];
   setItemsInStore: React.Dispatch<React.SetStateAction<StoreItem[]>>;
+  loadingLocalStorage: boolean;
 }
 
-export const StoreContext = createContext<StoreItemContext>({ itemsInStore: [], setItemsInStore: () => { } });
+export const StoreContext = createContext<StoreItemContext>({ itemsInStore: [], setItemsInStore: () => { }, loadingLocalStorage: true });
 
 export function StoreProvider({ children }: Readonly<{ children: React.ReactNode; }>) {
   const [itemsInStore, setItemsInStore] = useState<StoreItem[]>([]);
-  const value = { itemsInStore, setItemsInStore };
+  const [loadingLocalStorage, setLoadingLocalStorage] = useState(true);
+  const value = { itemsInStore, setItemsInStore, loadingLocalStorage };
 
   useEffect(() => {
     const savedItems = getInitialState();
     setItemsInStore(savedItems);
+    setLoadingLocalStorage(false);
   }, []);
 
   useEffect(() => {

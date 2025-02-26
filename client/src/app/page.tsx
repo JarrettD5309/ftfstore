@@ -1,7 +1,7 @@
+"use client";
 import Link from 'next/link';
 
 import ftf001Label from "../../public/images/FTF_001_front-center.jpg";
-import styles from "./page.module.css";
 import LogoHeader from './components/logo-header';
 import CartNav from './components/cart-nav';
 import AddToCartButton from './components/add-to-cart-button';

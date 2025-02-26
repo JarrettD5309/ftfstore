@@ -6,15 +6,17 @@ import { StoreItem } from "../utils/classes";
 import styles from "./add-to-cart-button.module.css";
 
 export default function AddToCartButton(props: { itemID: string }) {
-  let { itemsInStore, setItemsInStore } = useContext(StoreContext);
+  let { itemsInStore, setItemsInStore, loadingLocalStorage } = useContext(StoreContext);
   const [isAdded, setIsAdded] = useState(false);
   const [isGoToCart, setIsGoToCart] = useState(false);
   const [prevAdded, setPrevAdded] = useState(false);
 
   useEffect(() => {
-    const storageArray = getLocalStorageState();
-    setPrevAdded(!!storageArray.find(item => item.itemID === props.itemID));
-  }, []);
+    if(!loadingLocalStorage) {
+      setPrevAdded(!!itemsInStore.find(item => item.itemID === props.itemID));
+    }
+    
+  }, [loadingLocalStorage]);
 
   return (
     isGoToCart || prevAdded ?
@@ -41,23 +43,5 @@ export default function AddToCartButton(props: { itemID: string }) {
     return itemsInStore.find(item => item.itemID === props.itemID) ?
       [...itemsInStore] :
       [...itemsInStore, new StoreItem(props.itemID, 1)]
-  }
-
-  function getLocalStorageState() {
-    const storeItems = global?.window?.localStorage.getItem('storeItems');
-
-    if (!storeItems) {
-      return [];
-    }
-
-    const newArray: StoreItem[] = [];
-
-    JSON.parse(storeItems)
-      .forEach(
-        (itemObj: { _itemID: string, _quantity: number }) =>
-          newArray.push(new StoreItem(itemObj._itemID, itemObj._quantity))
-      );
-
-    return newArray;
   }
 }

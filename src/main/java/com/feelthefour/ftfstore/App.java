@@ -78,8 +78,8 @@ public class App {
       String YOUR_DOMAIN = "http://localhost:" + PORT;
       SessionCreateParams params = SessionCreateParams.builder()
           .setMode(SessionCreateParams.Mode.PAYMENT)
-          .setSuccessUrl(YOUR_DOMAIN + "/success.html")
-          .setCancelUrl(YOUR_DOMAIN + "/cancel.html")
+          .setSuccessUrl(YOUR_DOMAIN + "/success")
+          .setCancelUrl(YOUR_DOMAIN + "/cart")
           .setAutomaticTax(
               SessionCreateParams.AutomaticTax.builder()
                   .setEnabled(true)

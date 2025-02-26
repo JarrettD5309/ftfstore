@@ -1,3 +1,4 @@
+"use client";
 import Link from 'next/link';
 import LogoHeader from '../components/logo-header';
 import CartNav from '../components/cart-nav';

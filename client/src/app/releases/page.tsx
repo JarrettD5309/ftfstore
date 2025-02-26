@@ -1,3 +1,4 @@
+"use client";
 import Link from 'next/link';
 import ftf001Label from "../../../public/images/FTF_001_front-center.jpg";
 import LogoHeader from '../components/logo-header';

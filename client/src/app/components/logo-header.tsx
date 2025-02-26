@@ -1,3 +1,4 @@
+"use client";
 import ftfLogo from "../../../public/images/FTF_logo1.jpg";
 
 export default function LogoHeader(props: { displayLogo: boolean }) {
