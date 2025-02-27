@@ -3,6 +3,7 @@ import Link from 'next/link';
 import ftf001Label from "../../../public/images/FTF_001_front-center.jpg";
 import LogoHeader from '../components/logo-header';
 import CartNav from '../components/cart-nav';
+import AddToCartButton from '../components/add-to-cart-button';
 
 export default function Releases() {
   return (
@@ -45,9 +46,12 @@ export default function Releases() {
                 Lacquer Cut: Carl Rowatti<br />
                 Art: Perry Shall
               </p>
-              <p className="margin-top-2rem">ORDER HERE: <a className="link-button"
+              <p className="margin-top-2rem">ORDER HERE:</p> 
+              <p><AddToCartButton itemID='ftf001' /></p>
+              <p><a className="link-button margin-top-1rem"
                 href="https://34trolley.bandcamp.com/album/relaxation-ep" target="_blank"
                 rel="noopener noreferrer">BANDCAMP</a></p>
+              
             </div>
           </section>
         </section>

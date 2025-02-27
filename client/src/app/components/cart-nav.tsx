@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { StoreContext } from "../storeProvider/store-provider";
 
 export default function CartNav() {
-  let { itemsInStore, setItemsInStore } = useContext(StoreContext);
+  let { itemsInStore, setItemsInStore, loadingLocalStorage } = useContext(StoreContext);
   const quantityInStore = calcItemsInStore();
 
   return (

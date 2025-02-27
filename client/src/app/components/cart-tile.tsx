@@ -8,7 +8,7 @@ import styles from './cart-tile.module.css';
 import { StoreContext } from "../storeProvider/store-provider";
 
 export default function CartTile(props: { item: StoreItem, i: number }) {
-  let { itemsInStore, setItemsInStore } = useContext(StoreContext);
+  let { itemsInStore, setItemsInStore, loadingLocalStorage } = useContext(StoreContext);
   const [quantity, setQuantity] = useState(props.item.quantity.toString());
   const product = getProducts().find(product => product.productInfo.itemID === props.item.itemID);
   if (!product) {
