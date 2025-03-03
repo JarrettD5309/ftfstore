@@ -13,6 +13,7 @@ import com.stripe.param.checkout.SessionCreateParams;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import io.javalin.Javalin;
+import io.javalin.http.Context;
 import io.javalin.http.HttpStatus;
 import io.javalin.http.staticfiles.Location;
 
@@ -24,6 +25,7 @@ public class App {
   private static int PORT = 7070;
   private static String PRICE = "price";
   private static String QUANTITY = "quantity";
+  private static StoreRegistry storeRegistry = initRegistry();
 
   public static void main(String[] args) {
     // This is your test secret API key.
@@ -38,7 +40,44 @@ public class App {
 
       Map<String, List<String>> formParams = cxt.formParamMap();
 
-      ArrayList<SessionCreateParams.LineItem> productLineItemList = new ArrayList<>();
+      ArrayList<SessionCreateParams.LineItem> productLineItemList = getProductLineItemList(formParams, cxt);
+
+      if(productLineItemList == null) {
+        cxt.status(HttpStatus.BAD_REQUEST);
+        return;
+      }
+
+      String YOUR_DOMAIN = "http://localhost:" + PORT;
+      SessionCreateParams params = SessionCreateParams.builder()
+          .setMode(SessionCreateParams.Mode.PAYMENT)
+          .setSuccessUrl(YOUR_DOMAIN + "/success")
+          .setCancelUrl(YOUR_DOMAIN + "/cart")
+          .setAutomaticTax(
+              SessionCreateParams.AutomaticTax.builder()
+                  .setEnabled(true)
+                  .build())
+          .addAllLineItem(productLineItemList)
+          .build();
+      Session session = Session.create(params);
+
+      cxt.redirect(session.getUrl(), HttpStatus.SEE_OTHER);
+    });
+
+    app.start(PORT);
+  }
+
+  private static StoreRegistry initRegistry() {
+    StoreRegistry registry = new StoreRegistry();
+    ProductArray products = new ProductArray();
+    for(StoreItem item: products.getProducts()) {
+        registry.addItem(item);
+    }
+
+    return registry;
+  }
+
+  private static ArrayList<SessionCreateParams.LineItem> getProductLineItemList(Map<String, List<String>> formParams, Context cxt) {
+    ArrayList<SessionCreateParams.LineItem> productLineItemList = new ArrayList<>();
 
       boolean priceIDFound = false;
       boolean quantityFound = false;
@@ -48,12 +87,12 @@ public class App {
       for (String param : formParams.keySet()) {
 
         if(!param.split("_")[1].equals(String.valueOf(i))) {
-          cxt.status(HttpStatus.BAD_REQUEST);
-          return;
+          return null;
         }
 
         if (param.split("_")[0].equals(PRICE) && param.split("_")[1].equals(String.valueOf(i))) {
           priceIDFound = true;
+          System.out.println("HERE!!!: " + storeRegistry.getItem(cxt.formParam(param)));
           tempProductMap.put(PRICE, cxt.formParam(param));
         }
 
@@ -75,22 +114,6 @@ public class App {
         }
       }
 
-      String YOUR_DOMAIN = "http://localhost:" + PORT;
-      SessionCreateParams params = SessionCreateParams.builder()
-          .setMode(SessionCreateParams.Mode.PAYMENT)
-          .setSuccessUrl(YOUR_DOMAIN + "/success")
-          .setCancelUrl(YOUR_DOMAIN + "/cart")
-          .setAutomaticTax(
-              SessionCreateParams.AutomaticTax.builder()
-                  .setEnabled(true)
-                  .build())
-          .addAllLineItem(productLineItemList)
-          .build();
-      Session session = Session.create(params);
-
-      cxt.redirect(session.getUrl(), HttpStatus.SEE_OTHER);
-    });
-
-    app.start(PORT);
+      return productLineItemList;
   }
 }
