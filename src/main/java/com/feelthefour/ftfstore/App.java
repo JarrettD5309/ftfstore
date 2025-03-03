@@ -1,7 +1,6 @@
 package com.feelthefour.ftfstore;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -13,19 +12,13 @@ import com.stripe.param.checkout.SessionCreateParams;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import io.javalin.Javalin;
-import io.javalin.http.Context;
 import io.javalin.http.HttpStatus;
 import io.javalin.http.staticfiles.Location;
-
-/**
- * Hello world!
- *
- */
 public class App {
   private static int PORT = 7070;
-  private static String PRICE = "price";
-  private static String QUANTITY = "quantity";
   private static StoreRegistry storeRegistry = initRegistry();
+  private static FormProcessor formProcessor = new FormProcessor(storeRegistry);
+  private static CartProcessor cartProcessor = new CartProcessor();
 
   public static void main(String[] args) {
     // This is your test secret API key.
@@ -40,7 +33,9 @@ public class App {
 
       Map<String, List<String>> formParams = cxt.formParamMap();
 
-      ArrayList<SessionCreateParams.LineItem> productLineItemList = getProductLineItemList(formParams, cxt);
+      ArrayList<SessionCreateParams.LineItem> productLineItemList = formProcessor.getProductLineItemList(formParams, cxt);
+      ArrayList<CartItem> cartItems = formProcessor.getCartArrayList(formParams, cxt);
+      long shippingCostCents = cartProcessor.getShippingCostCents(cartItems, "USA");
 
       if(productLineItemList == null) {
         cxt.status(HttpStatus.BAD_REQUEST);
@@ -76,44 +71,4 @@ public class App {
     return registry;
   }
 
-  private static ArrayList<SessionCreateParams.LineItem> getProductLineItemList(Map<String, List<String>> formParams, Context cxt) {
-    ArrayList<SessionCreateParams.LineItem> productLineItemList = new ArrayList<>();
-
-      boolean priceIDFound = false;
-      boolean quantityFound = false;
-      HashMap<String, String> tempProductMap = new HashMap<>();
-      int i = 0;
-
-      for (String param : formParams.keySet()) {
-
-        if(!param.split("_")[1].equals(String.valueOf(i))) {
-          return null;
-        }
-
-        if (param.split("_")[0].equals(PRICE) && param.split("_")[1].equals(String.valueOf(i))) {
-          priceIDFound = true;
-          System.out.println("HERE!!!: " + storeRegistry.getItem(cxt.formParam(param)));
-          tempProductMap.put(PRICE, cxt.formParam(param));
-        }
-
-        if (param.split("_")[0].equals(QUANTITY) && param.split("_")[1].equals(String.valueOf(i))) {
-          quantityFound = true;
-          tempProductMap.put(QUANTITY, cxt.formParam(param));
-        }
-
-        if (priceIDFound == true && quantityFound == true) {
-          productLineItemList.add(
-              SessionCreateParams.LineItem.builder()
-                  .setQuantity(Long.valueOf(tempProductMap.get(QUANTITY)))
-                  .setPrice(tempProductMap.get(PRICE))
-                  .build());
-          priceIDFound = false;
-          quantityFound = false;
-          tempProductMap.clear();
-          i++;
-        }
-      }
-
-      return productLineItemList;
-  }
 }

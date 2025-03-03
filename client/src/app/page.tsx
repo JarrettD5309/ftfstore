@@ -48,7 +48,7 @@ export default function Home() {
               <p><a className="link-button margin-top-1rem"
                 href="https://34trolley.bandcamp.com/album/relaxation-ep" target="_blank"
                 rel="noopener noreferrer">BANDCAMP</a></p>
-              {/* <AddToCartButton itemID='ftf002' /> */}
+              <AddToCartButton itemID='ftf002' />
 
 
             </div>
