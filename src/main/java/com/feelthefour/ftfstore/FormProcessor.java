@@ -12,6 +12,7 @@ import io.javalin.http.Context;
 public class FormProcessor {
     private static String PRICE = "price";
     private static String QUANTITY = "quantity";
+    private static String LOCATION = "location";
     private StoreRegistry storeRegistry;
 
     public FormProcessor(StoreRegistry storeRegistry) {
@@ -20,6 +21,9 @@ public class FormProcessor {
 
     public ArrayList<CartItem> getCartArrayList(Map<String, List<String>> formParams, Context cxt) {
         ArrayList<CartItem> cartItems = new ArrayList<>();
+
+        formParams.remove(LOCATION);
+
         boolean priceIDFound = false;
         boolean quantityFound = false;
         HashMap<String, String> tempProductMap = new HashMap<>();
@@ -63,6 +67,8 @@ public class FormProcessor {
     public ArrayList<SessionCreateParams.LineItem> getProductLineItemList(Map<String, List<String>> formParams,
             Context cxt) {
         ArrayList<SessionCreateParams.LineItem> productLineItemList = new ArrayList<>();
+
+        formParams.remove(LOCATION);
 
         boolean priceIDFound = false;
         boolean quantityFound = false;
