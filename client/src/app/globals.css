@@ -130,6 +130,10 @@ button.link-like-button:active {
   padding-top: 1rem;
 }
 
+.text-center {
+    text-align: center;
+}
+
 @media screen and (max-width: 430px) {
   h1 {
     font-size: 3.2rem;

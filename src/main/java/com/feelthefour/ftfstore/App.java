@@ -29,11 +29,20 @@ public class App {
             config.staticFiles.add("out", Location.EXTERNAL);
         });
 
+        app.error(404, ctx -> {
+            ctx.redirect("/404");
+        });
+
         app.post("/create-checkout-session", cxt -> {
 
             Map<String, List<String>> formParams = cxt.formParamMap();
 
             String location = cxt.formParam(LOCATION);
+
+            if(location == null) {
+                cxt.status(HttpStatus.BAD_REQUEST);
+                return;
+            }
 
             ArrayList<SessionCreateParams.LineItem> productLineItemList = formProcessor
                     .getProductLineItemList(formParams, cxt);
