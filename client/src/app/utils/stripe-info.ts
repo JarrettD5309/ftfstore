@@ -4,8 +4,7 @@ type itemIDToStripe = {
 };
 
 const stripPriceIDs: itemIDToStripe[] = [
-  {itemID: 'ftf001', priceID: 'price_1QoXfKAthGHyEEe1h7ScHrT3'},
-  {itemID: 'ftf002', priceID: 'price_1Qpxb6AthGHyEEe1ZWht45dp'}
+  {itemID: 'ftf001', priceID: 'price_1R8mJEAthGHyEEe1N3ms1Gvz'},
 ];
 
 export const getStripePriceID = (itemID: string) => {

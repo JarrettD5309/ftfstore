@@ -34,15 +34,7 @@ const PRODUCTS: Product[] = [
     'ftf001',
     '34 Trolley',
     'Relaxation EP 12"',
-    'First release',
-    ftf001Label.src,
-    20.00
-  ),
-  new Product(
-    'ftf002',
-    'Countach',
-    'Mechanical Deathwish Mixtape',
-    'First Mixtape',
+    'Early 1980s NYC-style Post-Punk Mutant Disco out of Philly. First solo release from Jarrett Dougherty of legendary DIY Punk band Screaming Females. For fans of: ESG, Tom Tom Club, Liquid Liquid, Dinosaur L',
     ftf001Label.src,
     20.00
   ),
