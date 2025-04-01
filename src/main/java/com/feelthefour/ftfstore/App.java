@@ -24,6 +24,7 @@ public class App {
         // This is your test secret API key.
         Dotenv dotenv = Dotenv.load();
         Stripe.apiKey = dotenv.get("STRIPE_API_KEY");
+        String YOUR_DOMAIN = dotenv.get("URL");
 
         var app = Javalin.create(config -> {
             config.staticFiles.add("out", Location.EXTERNAL);
@@ -54,7 +55,6 @@ public class App {
                 return;
             }
 
-            String YOUR_DOMAIN = "http://localhost:" + PORT;
             SessionCreateParams params = SessionCreateParams.builder()
                     .setMode(SessionCreateParams.Mode.PAYMENT)
                     .setSuccessUrl(YOUR_DOMAIN + "/success")
