@@ -49,6 +49,7 @@ public class App {
                     .getProductLineItemList(formParams, cxt);
             ArrayList<CartItem> cartItems = formProcessor.getCartArrayList(formParams, cxt);
             long shippingCostCents = cartProcessor.getShippingCostCents(cartItems, location);
+            ArrayList<SessionCreateParams.ShippingAddressCollection.AllowedCountry> allowedCountries = cartProcessor.getAllowedShippingCountries();
 
             if (productLineItemList == null) {
                 cxt.status(HttpStatus.BAD_REQUEST);
@@ -63,6 +64,11 @@ public class App {
                             SessionCreateParams.AutomaticTax.builder()
                                     .setEnabled(true)
                                     .build())
+                    .setShippingAddressCollection(
+                        SessionCreateParams.ShippingAddressCollection.builder()
+                            .addAllAllowedCountry(allowedCountries)
+                            .build()
+                    )
                     .addShippingOption(
                             SessionCreateParams.ShippingOption.builder()
                                     .setShippingRateData(
