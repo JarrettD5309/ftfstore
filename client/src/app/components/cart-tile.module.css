@@ -15,10 +15,10 @@
   background-color: #fff;
   border: 1px solid #fff;
   border-radius: 2px;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   height: 3rem;
-  margin-top: 1rem;
   text-align: center;
+  vertical-align: middle;
   width: 5rem;
 }
 
@@ -28,12 +28,15 @@ input.numberInput[type=number]::-webkit-inner-spin-button {
 
 .numberLabel {
   font-size: 1.8rem;
-  line-height: 2.2rem;
   padding-right: 1rem;
 }
 
 .priceColumn {
   margin-left: auto;
+}
+
+.quantityDiv {
+  margin-top: 1rem;
 }
 
 .removeButton {

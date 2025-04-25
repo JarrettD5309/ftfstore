@@ -25,26 +25,50 @@ export default function CartTile(props: { item: StoreItem, i: number }) {
         <p>{product?.productInfo.title}</p>
         <p>{product?.productInfo.artist}</p>
         <input type="hidden" id="priceID" name={`price_${props.i}`} value={getStripePriceID(props.item.itemID)} />
-        <label htmlFor="quantity" className={styles.numberLabel}>Quantity</label>
-        <input
-          className={styles.numberInput}
-          type="number"
-          id="quantity"
-          name={`quantity_${props.i}`}
-          min="1" max="10"
-          value={quantity}
-          onChange={e => {
-            setQuantity(e.target.value);
-            setItemsInStore(setItems(parseInt(e.target.value)));
-          }}
-        />
+        <div className={styles.quantityDiv}>
+          <label htmlFor="quantity" className={styles.numberLabel}>Quantity</label>
+          <input
+            className={styles.numberInput}
+            type="number"
+            inputMode="numeric"
+            pattern="^[1-9][0-9]*$"
+            id="quantity"
+            name={`quantity_${props.i}`}
+            min="1" max="10"
+            value={quantity}
+            required
+            onChange={e => {
+              if (isNaN(parseInt(e.target.value))) {
+                setQuantity(e.target.value);
+                setItemsInStore(setItems(1));
+              } else {
+                setQuantity(e.target.value);
+                setItemsInStore(setItems(parseInt(e.target.value)));
+              }
+
+            }}
+          />
+        </div>
+
         <button className={styles.removeButton} onClick={removeItem}>Remove</button>
       </div>
       <div className={styles.priceColumn}>
-        <p>${product?.productInfo.price * props.item.quantity}</p>
+        <p>${calcPrice()}</p>
       </div>
     </fieldset>
   );
+
+  function calcPrice() {
+    if (!product) {
+      return;
+    }
+
+    if (isNaN(props.item.quantity)) {
+      return product?.productInfo.price * 1;
+    } else {
+      return product?.productInfo.price * props.item.quantity;
+    }
+  }
 
   function setItems(quantity: number) {
     const newArray = [...itemsInStore];
