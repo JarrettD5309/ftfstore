@@ -13,6 +13,16 @@ export default function OldNews() {
         <p className="padding-left-1_3rem"><Link href="/">{`< HOME`}</Link></p>
         <section className="main-section">
           <h2>Old News</h2>
+          <p>
+            <u>Dec 17, 2024</u>
+            <br />
+            <br />
+            Our very own DJ RETTWINS aka 34 Trolley aka Jarrett D made an all vinyl mix for the HOT MIX on WKDU.
+            Classic cuts, 2024 bangers, dollar bin weridness, and of course a few 34 Trolley tracks. Check it out on <a
+              href="https://on.soundcloud.com/pkNdpKZEzpYrAuQr5" target="_blank"
+              rel="noopener noreferrer">SOUNDCLOUD</a>.
+          </p>
+          <br /><br />
           <p><u>Oct 4, 2024</u><br /><br />34 Trolley's "Relaxation EP" is out now!<br /><br />Order the vinyl and stream the record
             at <a href="https://34trolley.bandcamp.com/" target="_blank"
               rel="noopener noreferrer">34trolley.bandcamp.com</a>.

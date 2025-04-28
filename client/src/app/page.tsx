@@ -17,13 +17,10 @@ export default function Home() {
         <section className="main-section">
           <h2>News</h2>
           <p>
-            <u>Dec 17, 2024</u>
+            <u>Apr 28, 2025</u>
             <br />
             <br />
-            Our very own DJ RETTWINS aka 34 Trolley aka Jarrett D made an all vinyl mix for the HOT MIX on WKDU.
-            Classic cuts, 2024 bangers, dollar bin weridness, and of course a few 34 Trolley tracks. Check it out on <a
-              href="https://on.soundcloud.com/pkNdpKZEzpYrAuQr5" target="_blank"
-              rel="noopener noreferrer">SOUNDCLOUD</a>.
+            We are officially SOLD OUT of 34 Trolley vinyl! We are excited to announce we now have UK/EU/Australia distribution! Check below for some of the stores carrying our records. 
           </p>
 
           <p className="margin-top-1rem">
@@ -44,7 +41,7 @@ export default function Home() {
               <p>Released Oct 2024</p>
               <p>Tracklist: <br />1. Relaxation <br />2. Coming For You? <br />3. Go Ahead <br />4. Dream Freedom</p>
               <p className="margin-top-2rem">ORDER HERE:</p>
-              <p><AddToCartButton itemID='ftf001' /></p>
+              {/* <p><AddToCartButton itemID='ftf001' /></p> */}
               <p><a className="link-button margin-top-1rem"
                 href="https://34trolley.bandcamp.com/album/relaxation-ep" target="_blank"
                 rel="noopener noreferrer">BANDCAMP</a></p>
@@ -112,6 +109,22 @@ export default function Home() {
             <li>Selector Records | Seattle</li>
             <li>Sonic Boom | Seattle</li>
             <li>Zions Gate | Seattle</li>
+          </ul>
+          <h3 className="margin-top-2rem">Australia</h3>
+          <ul className="margin-top-1rem">
+            <li>Record Store | Sydney</li>
+          </ul>
+          <h3 className="margin-top-2rem">Germany</h3>
+          <ul className="margin-top-1rem">
+            <li>Deejay.de</li>
+            <li>HHV Records - Berlin</li>
+            <li>Word and Sound</li>
+          </ul>
+          <h3 className="margin-top-2rem">UK</h3>
+          <ul className="margin-top-1rem">
+            <li>Juno</li>
+            <li>Phonica - London</li>
+            <li>Redeye</li>
           </ul>
         </section>
 

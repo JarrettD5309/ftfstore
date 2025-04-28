@@ -47,7 +47,7 @@ export default function Releases() {
                 Art: Perry Shall
               </p>
               <p className="margin-top-2rem">ORDER HERE:</p> 
-              <p><AddToCartButton itemID='ftf001' /></p>
+              {/* <p><AddToCartButton itemID='ftf001' /></p> */}
               <p><a className="link-button margin-top-1rem"
                 href="https://34trolley.bandcamp.com/album/relaxation-ep" target="_blank"
                 rel="noopener noreferrer">BANDCAMP</a></p>
