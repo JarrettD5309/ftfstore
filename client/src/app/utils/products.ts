@@ -39,4 +39,9 @@ const PRODUCTS: Product[] = [
     20.00
   ),
 ];
+
+const OUT_OF_STOCK: string[] = ['ftf001'];
+
 export const getProducts = () => PRODUCTS;
+
+export const isOutOfStock = (itemID: string): boolean => OUT_OF_STOCK.includes(itemID);

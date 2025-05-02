@@ -1,6 +1,7 @@
 "use client";
 import { createContext, useEffect, useState } from "react";
 import { StoreItem } from "../utils/classes";
+import { isOutOfStock } from "../utils/products";
 
 export interface StoreItemContext {
   itemsInStore: StoreItem[];
@@ -42,8 +43,11 @@ export function StoreProvider({ children }: Readonly<{ children: React.ReactNode
 
     JSON.parse(storeItems)
       .forEach(
-        (itemObj: { _itemID: string, _quantity: number }) =>
-          newArray.push(new StoreItem(itemObj._itemID, itemObj._quantity))
+        (itemObj: { _itemID: string, _quantity: number }) => {
+          if (!isOutOfStock(itemObj._itemID)) {
+            newArray.push(new StoreItem(itemObj._itemID, itemObj._quantity))
+          }
+        }
       );
 
     return newArray;
