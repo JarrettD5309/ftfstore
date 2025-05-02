@@ -17,10 +17,10 @@ export default function Home() {
         <section className="main-section">
           <h2>News</h2>
           <p>
-            <u>Apr 28, 2025</u>
+            <u>May 02, 2025</u>
             <br />
             <br />
-            We are officially SOLD OUT of 34 Trolley vinyl! We are excited to announce we now have UK/EU/Australia distribution! Check below for some of the stores carrying our records. 
+            Our very own Jarrett D aka 34 Trolley aka DJ RETTWINS recently took a trip to the UK and came home with a ton of vinyl. Check his Mixcloud for a new all vinyl mix of some acid, jacking house, techno, and all sorts of UK rave bangers. <a href="https://www.mixcloud.com/RETTWINS/sounds-from-a-uk-recording-shopping-trip/" target="_blank" rel="noopener noreferrer">https://www.mixcloud.com/RETTWINS</a>
           </p>
 
           <p className="margin-top-1rem">

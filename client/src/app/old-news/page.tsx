@@ -14,6 +14,13 @@ export default function OldNews() {
         <section className="main-section">
           <h2>Old News</h2>
           <p>
+            <u>Apr 28, 2025</u>
+            <br />
+            <br />
+            We are officially SOLD OUT of 34 Trolley vinyl! We are excited to announce we now have UK/EU/Australia distribution! Check below for some of the stores carrying our records. 
+          </p>
+          <br /><br />
+          <p>
             <u>Dec 17, 2024</u>
             <br />
             <br />
