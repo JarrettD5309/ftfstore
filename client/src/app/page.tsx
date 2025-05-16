@@ -117,13 +117,22 @@ export default function Home() {
           <h3 className="margin-top-2rem">Germany</h3>
           <ul className="margin-top-1rem">
             <li>Deejay.de</li>
-            <li>HHV Records - Berlin</li>
+            <li>HHV Records | Berlin</li>
             <li>Word and Sound</li>
+          </ul>
+          <h3 className="margin-top-2rem">Italy</h3>
+          <ul className="margin-top-1rem">
+            <li>Serendeepity | Milan</li>
+          </ul>
+          <h3 className="margin-top-2rem">Japan</h3>
+          <ul className="margin-top-1rem">
+            <li>Newtone Records | Osaka</li>
+            <li>Strada Records | Kobe</li>
           </ul>
           <h3 className="margin-top-2rem">UK</h3>
           <ul className="margin-top-1rem">
             <li>Juno</li>
-            <li>Phonica - London</li>
+            <li>Phonica | London</li>
             <li>Redeye</li>
           </ul>
         </section>
