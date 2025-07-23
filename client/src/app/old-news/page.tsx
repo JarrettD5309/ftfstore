@@ -14,6 +14,13 @@ export default function OldNews() {
         <section className="main-section">
           <h2>Old News</h2>
           <p>
+            <u>May 02, 2025</u>
+            <br />
+            <br />
+            Our very own Jarrett D aka 34 Trolley aka DJ RETTWINS recently took a trip to the UK and came home with a ton of vinyl. Check his Mixcloud for a new all vinyl mix of some acid, jacking house, techno, and all sorts of UK rave bangers. <a href="https://www.mixcloud.com/RETTWINS/sounds-from-a-uk-recording-shopping-trip/" target="_blank" rel="noopener noreferrer">https://www.mixcloud.com/RETTWINS</a>
+          </p>
+          <br /><br />
+          <p>
             <u>Apr 28, 2025</u>
             <br />
             <br />

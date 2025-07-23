@@ -115,6 +115,19 @@ button.link-like-button:active {
   margin-top: 2rem;
 }
 
+.news-img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 280px;
+}
+
+.news-img-white-border {
+  border: white 1px solid;
+  display: block;
+  margin: 1rem auto;
+  max-width: 280px;
+}
+
 .padding-left-1_3rem {
   padding-left: 1.3rem;
 }

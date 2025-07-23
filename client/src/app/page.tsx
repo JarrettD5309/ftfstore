@@ -2,6 +2,7 @@
 import Link from 'next/link';
 
 import ftf001Label from "../../public/images/FTF_001_front-center.jpg";
+import gonerFestFlyer from "../../public/images/feelitgonerflyerBW.jpg";
 import LogoHeader from './components/logo-header';
 import CartNav from './components/cart-nav';
 import AddToCartButton from './components/add-to-cart-button';
@@ -17,10 +18,29 @@ export default function Home() {
         <section className="main-section">
           <h2>News</h2>
           <p>
-            <u>May 02, 2025</u>
+            <u>Jul 23, 2025</u>
             <br />
             <br />
-            Our very own Jarrett D aka 34 Trolley aka DJ RETTWINS recently took a trip to the UK and came home with a ton of vinyl. Check his Mixcloud for a new all vinyl mix of some acid, jacking house, techno, and all sorts of UK rave bangers. <a href="https://www.mixcloud.com/RETTWINS/sounds-from-a-uk-recording-shopping-trip/" target="_blank" rel="noopener noreferrer">https://www.mixcloud.com/RETTWINS</a>
+            <img className="news-img" src={gonerFestFlyer.src}
+              alt="flyer for Feel It Presents... A Gonerfest After Party" />
+            <br />
+            Grab your SEPTA card and get ready to board. 34 Trolley is playing a gig! Jarrett explains “34 Trolley was never meant to be a live band but when I got asked about this gig I couldn’t pass it up.”
+            <br /><br />
+            Feel It Records is one of our favorite labels for underground punk/post punk/hardcore records and have been a huge supporter of Feel The Four via their brick and mortar shop in Cincinnati. Goner Records is an absolutely iconic garage punk label and their Gonerfest is a thing of legend!
+            <br /><br />
+            For this live incarnation, 34 Trolley will consist of:
+            <br />
+            Jarrett Dougherty - Percussion
+            <br />
+            Cristian Adams - Bass
+            <br />
+            Maryn Jones - Vocals
+            <br />
+            Tony Richards - Drums
+            <br />
+            Zachary Fairbrother - Guitar
+            <br />
+            Victor Vieira-Branco - Vibraphone
           </p>
 
           <p className="margin-top-1rem">
