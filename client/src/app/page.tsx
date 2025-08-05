@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 import ftf001Label from "../../public/images/FTF_001_front-center.jpg";
-import gonerFestFlyer from "../../public/images/feelitgonerflyerBW.jpg";
+import godsFlyer from "../../public/images/sep-5-flyer-new-info-2.jpg";
 import LogoHeader from './components/logo-header';
 import CartNav from './components/cart-nav';
 import AddToCartButton from './components/add-to-cart-button';
@@ -18,29 +18,37 @@ export default function Home() {
         <section className="main-section">
           <h2>News</h2>
           <p>
-            <u>Jul 23, 2025</u>
+            <u>Aug 05, 2025</u>
             <br />
             <br />
-            <img className="news-img" src={gonerFestFlyer.src}
-              alt="flyer for Feel It Presents... A Gonerfest After Party" />
+            <img className="news-img" src={godsFlyer.src}
+              alt="flyer for 34 Trolley debut live performance at God's Autobody" />
             <br />
-            Grab your SEPTA card and get ready to board. 34 Trolley is playing a gig! Jarrett explains “34 Trolley was never meant to be a live band but when I got asked about this gig I couldn’t pass it up.”
+            Hey Punk… Do You Freak Funk???
             <br /><br />
-            Feel It Records is one of our favorite labels for underground punk/post punk/hardcore records and have been a huge supporter of Feel The Four via their brick and mortar shop in Cincinnati. Goner Records is an absolutely iconic garage punk label and their Gonerfest is a thing of legend!
+            You are invited to an evening of eclectic sounds and grooves to celebrate the debut live performance of 34 Trolley. Music done by 10 so get there early!
             <br /><br />
-            For this live incarnation, 34 Trolley will consist of:
+            Fri Sep 5
             <br />
-            Jarrett Dougherty - Percussion
+            34 Trolley
             <br />
-            Cristian Adams - Bass
+            Cult Objects
             <br />
-            Maryn Jones - Vocals
+            Ring Sour
             <br />
-            Tony Richards - Drums
+            Koof Ibi
             <br />
-            Zachary Fairbrother - Guitar
+            Shawn Ryan & Ryan Todd (Patience In Exile DJ set)
+            <br /><br />
+            @ God's Autobody
             <br />
-            Victor Vieira-Branco - Vibraphone
+            5522 Baltimore Ave
+            <br />
+            West Philly
+            <br />
+            7:00
+            <br />
+            $10
           </p>
 
           <p className="margin-top-1rem">

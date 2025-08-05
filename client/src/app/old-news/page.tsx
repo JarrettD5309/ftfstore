@@ -3,6 +3,8 @@ import Link from 'next/link';
 import LogoHeader from '../components/logo-header';
 import CartNav from '../components/cart-nav';
 
+import gonerFestFlyer from "../../../public/images/feelitgonerflyerBW.jpg";
+
 export default function OldNews() {
   return (
     <>
@@ -13,6 +15,32 @@ export default function OldNews() {
         <p className="padding-left-1_3rem"><Link href="/">{`< HOME`}</Link></p>
         <section className="main-section">
           <h2>Old News</h2>
+          <p>
+            <u>Jul 23, 2025</u>
+            <br />
+            <br />
+            <img className="news-img" src={gonerFestFlyer.src}
+              alt="flyer for Feel It Presents... A Gonerfest After Party" />
+            <br />
+            Grab your SEPTA card and get ready to board. 34 Trolley is playing a gig! Jarrett explains “34 Trolley was never meant to be a live band but when I got asked about this gig I couldn't pass it up.”
+            <br /><br />
+            Feel It Records is one of our favorite labels for underground punk/post punk/hardcore records and have been a huge supporter of Feel The Four via their brick and mortar shop in Cincinnati. Goner Records is an absolutely iconic garage punk label and their Gonerfest is a thing of legend!
+            <br /><br />
+            For this live incarnation, 34 Trolley will consist of:
+            <br />
+            Jarrett Dougherty - Percussion
+            <br />
+            Cristian Adams - Bass
+            <br />
+            Maryn Jones - Vocals
+            <br />
+            Tony Richards - Drums
+            <br />
+            Zachary Fairbrother - Guitar
+            <br />
+            Victor Vieira-Branco - Vibraphone
+          </p>
+          <br /><br />
           <p>
             <u>May 02, 2025</u>
             <br />
