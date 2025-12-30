@@ -1,4 +1,5 @@
-import ftf001Label from '../../../public/images/FTF_001_front-center.jpg'
+import ftf001Label from '../../../public/images/FTF_001_front-center.jpg';
+import trolleyShirt from '../../../public/images/34_trolley_shirt_square.jpg';
 
 export class Product {
   private _itemID: string;
@@ -36,6 +37,22 @@ const PRODUCTS: Product[] = [
     'Relaxation EP 12"',
     'Early 1980s NYC-style Post-Punk Mutant Disco out of Philly. First solo release from Jarrett Dougherty of legendary DIY Punk band Screaming Females. For fans of: ESG, Tom Tom Club, Liquid Liquid, Dinosaur L',
     ftf001Label.src,
+    20.00
+  ),
+  new Product(
+    '34trolleyt001l',
+    '34 Trolley',
+    'T Shirt - Size: L',
+    '34 Trolley T-Shirt - Size: L',
+    trolleyShirt.src,
+    20.00
+  ),
+  new Product(
+    '34trolleyt001xl',
+    '34 Trolley',
+    'T Shirt - Size: XL',
+    '34 Trolley T-Shirt - Size: XL',
+    trolleyShirt.src,
     20.00
   ),
 ];

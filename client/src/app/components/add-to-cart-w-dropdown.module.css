@@ -1,0 +1,29 @@
+.buttonMinWidth {
+  min-width: 16.5rem;
+}
+
+.linkStyle {
+  border: blueviolet 2px solid !important;
+  min-width: 12.1rem;
+}
+
+.outerBorder {
+  border: #fafafa 1px solid;
+  padding: 1.2rem;
+}
+
+.sizeLabel {
+  font-size: 1.8rem;
+  padding-right: 1rem;
+}
+
+.sizeSelect {
+  background-color: #fff;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  font-size: 1.6rem;
+  height: 3rem;
+  margin-top: 1.2rem;
+  text-align: center;
+  width: 5rem;
+}

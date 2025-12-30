@@ -4,6 +4,7 @@ import LogoHeader from '../components/logo-header';
 import CartNav from '../components/cart-nav';
 
 import gonerFestFlyer from "../../../public/images/feelitgonerflyerBW.jpg";
+import godsFlyer from "../../../public/images/sep-5-flyer-new-info-2.jpg";
 
 export default function OldNews() {
   return (
@@ -15,6 +16,40 @@ export default function OldNews() {
         <p className="padding-left-1_3rem"><Link href="/">{`< HOME`}</Link></p>
         <section className="main-section">
           <h2>Old News</h2>
+          <p>
+            <u>Aug 05, 2025</u>
+            <br />
+            <br />
+            <img className="news-img" src={godsFlyer.src}
+              alt="flyer for 34 Trolley debut live performance at God's Autobody" />
+            <br />
+            Hey Punk… Do You Freak Funk???
+            <br /><br />
+            You are invited to an evening of eclectic sounds and grooves to celebrate the debut live performance of 34 Trolley. Music done by 10 so get there early!
+            <br /><br />
+            Fri Sep 5
+            <br />
+            34 Trolley
+            <br />
+            Cult Objects
+            <br />
+            Ring Sour
+            <br />
+            Koof Ibi
+            <br />
+            Shawn Ryan & Ryan Todd (Patience In Exile DJ set)
+            <br /><br />
+            @ God's Autobody
+            <br />
+            5522 Baltimore Ave
+            <br />
+            West Philly
+            <br />
+            7:00
+            <br />
+            $10
+          </p>
+          <br /><br />
           <p>
             <u>Jul 23, 2025</u>
             <br />
@@ -52,7 +87,7 @@ export default function OldNews() {
             <u>Apr 28, 2025</u>
             <br />
             <br />
-            We are officially SOLD OUT of 34 Trolley vinyl! We are excited to announce we now have UK/EU/Australia distribution! Check below for some of the stores carrying our records. 
+            We are officially SOLD OUT of 34 Trolley vinyl! We are excited to announce we now have UK/EU/Australia distribution! Check below for some of the stores carrying our records.
           </p>
           <br /><br />
           <p>
