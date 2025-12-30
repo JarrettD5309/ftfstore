@@ -121,20 +121,45 @@ public class CartProcessor {
     }
 
     private long getShippingUSA(ArrayList<CartItem> cartItems) {
-        // create logic to deal with media vs not media
-        int numItems = 0;
+        int numMediaItems = 0;
+        int numNonMediaItems = 0;
 
         for(CartItem cartItem: cartItems) {
-            numItems += cartItem.getQuantity();
+            if(cartItem.getIsMedia()) {
+                numMediaItems += cartItem.getQuantity();
+            } else {
+                numNonMediaItems += cartItem.getQuantity();
+            }
         }
 
+        return getShippingMediaUSA(numMediaItems) + getShippingNonMediaUSA(numNonMediaItems);
+    }
+
+    private long getShippingMediaUSA(int numMediaItems) {
+        int itemOnePriceCentsMedia = 700;
+        int itemAdditionalPriceCentsMedia = 200;
+
+        return getShippingCostCentsUSA(numMediaItems, itemOnePriceCentsMedia, itemAdditionalPriceCentsMedia);
+    }
+
+    private long getShippingNonMediaUSA(int numNonMediaItems) {
+        int itemOnePriceCentsNonMedia = 1000;
+        int itemAdditionalPriceCentsNonMedia = 500;
+
+        return getShippingCostCentsUSA(numNonMediaItems, itemOnePriceCentsNonMedia, itemAdditionalPriceCentsNonMedia);
+    }
+
+    private long getShippingCostCentsUSA(int numTypeItems, int itemOnePriceCents, int itemAdditionalPriceCents) {
         long shippingCostCents = 0;
 
-        if(numItems == 1) {
-            shippingCostCents += 700;
-        } else {
-            shippingCostCents += 700 + (200*(numItems-1));
+        if(numTypeItems == 0) {
+            return 0;
+        }
 
+        if(numTypeItems == 1) {
+            shippingCostCents += itemOnePriceCents;
+        } else {
+            shippingCostCents += itemOnePriceCents + (itemAdditionalPriceCents*(numTypeItems-1));
         }
 
         return shippingCostCents;
