@@ -10,10 +10,10 @@ public class ProductArray {
         StoreItem thirtyFourTrolleyRelaxation = new StoreItem("price_1R8mJEAthGHyEEe1N3ms1Gvz", "34 Trolley - Relaxation 12", true);
         this.products.add(thirtyFourTrolleyRelaxation);
 
-        StoreItem thirtyFourTrolleyTShirtL = new StoreItem("price_1Sk4rVAthGHyEEe1nGTU1Drz", "34 Trolley - T-Shirt - Size: L", false);
+        StoreItem thirtyFourTrolleyTShirtL = new StoreItem("price_1SkRsxAthGHyEEe1jmIhsjXP", "34 Trolley - T-Shirt - Size: L", false);
         this.products.add(thirtyFourTrolleyTShirtL);
 
-        StoreItem thirtyFourTrolleyTShirtXL = new StoreItem("price_1Sk4t1AthGHyEEe1SIHy6ZFR", "34 Trolley - T-Shirt - Size: XL", false);
+        StoreItem thirtyFourTrolleyTShirtXL = new StoreItem("price_1SkRsrAthGHyEEe1VgDbAFQS", "34 Trolley - T-Shirt - Size: XL", false);
         this.products.add(thirtyFourTrolleyTShirtXL);
     }
 
