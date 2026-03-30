@@ -1,6 +1,7 @@
 "use client";
 import Link from 'next/link';
 import ftf001Label from "../../../public/images/FTF_001_front-center.jpg";
+import ftf002Label from "../../../public/images/FTF-002_front-center.jpeg";
 import LogoHeader from '../components/logo-header';
 import CartNav from '../components/cart-nav';
 import AddToCartButton from '../components/add-to-cart-button';
@@ -15,6 +16,35 @@ export default function Releases() {
         <p className="padding-left-1_3rem"><Link href="/">{`< HOME`}</Link></p>
         <section className="main-section">
           <h2>Releases</h2>
+          <section>
+            <img className="release-img" src={ftf002Label.src}
+              alt="vinyl label for Countach - Power - EP - FTF-002" />
+            <h3>FTF-002</h3>
+            <div className="release-info">
+              <p>Artist: Countach</p>
+              <p>Title: Power - EP</p>
+              <p>Released May 2026</p>
+              <p>Tracklist: <br />1. Feel The Power <br />2. Any Other Way (ft. Morgan Garrett) <br />3. Gauntlet <br />4. Who Is In Control?</p>
+              <br />
+              <p>
+                Credits:<br />
+                Production/Mixing/Guitars/Synths/Vocoder: Zachary Devereux Fairbrother<br />
+                Vocals on “Any Other Way”: Morgan Garrett<br /><br />
+                All tracks written by Zachary Devereux Fairbrother except “Any Other Way” co-written with Morgan Garrett<br /><br />
+                Recorded and Mixed: Zach's Attic<br />
+                Mastered: Danny Murillo<br />
+                Lacquer Cut: Carl Rowatti<br />
+                Art: Perry Shall & Sasha Safir-Temple
+              </p>
+              <p className="margin-top-2rem">ORDER HERE:</p>
+              {/* <p><AddToCartButton itemID='ftf001' /></p> */}
+              <p><a className="link-button margin-top-1rem"
+                href="https://countach1985.bandcamp.com/album/power-ep" target="_blank"
+                rel="noopener noreferrer">BANDCAMP</a></p>
+
+            </div>
+          </section>
+          <hr className="dotted-hr" />
           <section>
             <img className="release-img" src={ftf001Label.src}
               alt="vinyl label for 34 Trolley - Relaxation EP - FTF-001" />
@@ -46,12 +76,12 @@ export default function Releases() {
                 Lacquer Cut: Carl Rowatti<br />
                 Art: Perry Shall
               </p>
-              <p className="margin-top-2rem">ORDER HERE:</p> 
+              <p className="margin-top-2rem">ORDER HERE:</p>
               {/* <p><AddToCartButton itemID='ftf001' /></p> */}
               <p><a className="link-button margin-top-1rem"
                 href="https://34trolley.bandcamp.com/album/relaxation-ep" target="_blank"
                 rel="noopener noreferrer">BANDCAMP</a></p>
-              
+
             </div>
           </section>
         </section>

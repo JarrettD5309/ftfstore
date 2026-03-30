@@ -93,6 +93,12 @@ button.link-like-button:active {
   color: black;
 }
 
+hr.dotted-hr {
+  border: none;
+  border-top: 2px dashed white;
+  margin: 3rem auto;
+}
+
 .logo {
   display: block;
   margin: 1.5rem auto;

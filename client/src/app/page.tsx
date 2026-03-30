@@ -2,11 +2,11 @@
 import Link from 'next/link';
 
 import ftf001Label from "../../public/images/FTF_001_front-center.jpg";
-import trolleyShirtFull from "../../public/images/34_trolley_shirt_full.jpg";
+import ftf002Label from "../../public/images/FTF-002_front-center.jpeg";
+import countachPhoto from "../../public/images/countach_peter-sherno_1.jpeg";
 import LogoHeader from './components/logo-header';
 import CartNav from './components/cart-nav';
 import AddToCartButton from './components/add-to-cart-button';
-import AddToCartButtonWDropdown from './components/add-to-cart-w-dropdown';
 
 export default function Home() {
   return (
@@ -19,20 +19,14 @@ export default function Home() {
         <section className="main-section">
           <h2>News</h2>
           <p>
-            <u>Jan 01, 2026</u>
+            <u>Mar 31, 2026</u>
             <br />
             <br />
-            <img className="news-img" src={trolleyShirtFull.src}
+            <img className="news-img" src={countachPhoto.src}
               alt="flyer for 34 Trolley debut live performance at God's Autobody" />
             <br />
-            Limited number of 34 Trolley t-shirts are now available. Until now these shirts were sold exclusively at live events. Only size L and XL. Shirt sizes run a little small. Union made in the USA.
-            <br />
-            <br />
-            L - armpit to armpit: 22in, length: 30in
-            <br />
-            XL - armpit to armpit: 23in, length: 32in
+            Announcing “Power - EP” by Philadelphia based producer Countach (aka Zach Fairbrother formerly of digital hardcore band GHÖSH). The EP, which marks the second release from Feel The Four Records, is dark, heavy big room Techno with a healthy dose of Acid and shades of 90s Big Beat. The propulsive first track, “Any Other Way (feat Morgan Garrett),” is streaming now on Bandcamp and YouTube. Pre-orders for the 12” vinyl EP (out May 8) are available at <a href="https://countach1985.bandcamp.com/album/power-ep" target="_blank" rel="noopener noreferrer">countach1985.bandcamp.com/album/power-ep</a>.
           </p>
-          <AddToCartButtonWDropdown itemID='34trolleyt001' options={['l', 'xl']} />
           <p className="margin-top-1rem">
             <Link href="/old-news">OLD NEWS</Link>
           </p>
@@ -42,6 +36,22 @@ export default function Home() {
 
         <section className="main-section">
           <h2>Releases</h2>
+          <section>
+            <img className="release-img" src={ftf002Label.src}
+              alt="vinyl label for Countach - Power - EP - FTF-002" />
+            <h3>Countach - Power - EP</h3>
+            <div className="release-info">
+              <p>FTF-002</p>
+              <p>Released May 2026</p>
+              <p>Tracklist: <br />1. Feel The Power <br />2. Any Other Way (ft. Morgan Garrett) <br />3. Gauntlet <br />4. Who Is In Control?</p>
+              <p className="margin-top-2rem">ORDER HERE:</p>
+              {/* <p><AddToCartButton itemID='ftf001' /></p> */}
+              <p><a className="link-button margin-top-1rem"
+                href="https://countach1985.bandcamp.com/album/power-ep" target="_blank"
+                rel="noopener noreferrer">BANDCAMP</a></p>
+            </div>
+          </section>
+          <hr className="dotted-hr" />
           <section>
             <img className="release-img" src={ftf001Label.src}
               alt="vinyl label for 34 Trolley - Relaxation EP - FTF-001" />

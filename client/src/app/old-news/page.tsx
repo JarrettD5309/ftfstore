@@ -2,9 +2,11 @@
 import Link from 'next/link';
 import LogoHeader from '../components/logo-header';
 import CartNav from '../components/cart-nav';
+import AddToCartButtonWDropdown from '../components/add-to-cart-w-dropdown';
 
 import gonerFestFlyer from "../../../public/images/feelitgonerflyerBW.jpg";
 import godsFlyer from "../../../public/images/sep-5-flyer-new-info-2.jpg";
+import trolleyShirtFull from "../../../public/images/34_trolley_shirt_full.jpg";
 
 export default function OldNews() {
   return (
@@ -16,6 +18,22 @@ export default function OldNews() {
         <p className="padding-left-1_3rem"><Link href="/">{`< HOME`}</Link></p>
         <section className="main-section">
           <h2>Old News</h2>
+          <p>
+            <u>Jan 01, 2026</u>
+            <br />
+            <br />
+            <img className="news-img" src={trolleyShirtFull.src}
+              alt="flyer for 34 Trolley debut live performance at God's Autobody" />
+            <br />
+            Limited number of 34 Trolley t-shirts are now available. Until now these shirts were sold exclusively at live events. Only size L and XL. Shirt sizes run a little small. Union made in the USA.
+            <br />
+            <br />
+            L - armpit to armpit: 22in, length: 30in
+            <br />
+            XL - armpit to armpit: 23in, length: 32in
+          </p>
+          <AddToCartButtonWDropdown itemID='34trolleyt001' options={['l', 'xl']} />
+          <br /><br />
           <p>
             <u>Aug 05, 2025</u>
             <br />
