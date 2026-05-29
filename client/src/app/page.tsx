@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 import ftf001Label from "../../public/images/FTF_001_front-center.jpg";
 import ftf002Label from "../../public/images/FTF-002_front-center.jpeg";
-import countachPhoto from "../../public/images/countach_peter-sherno_1.jpeg";
 import LogoHeader from './components/logo-header';
 import CartNav from './components/cart-nav';
 import AddToCartButton from './components/add-to-cart-button';
@@ -19,13 +18,13 @@ export default function Home() {
         <section className="main-section">
           <h2>News</h2>
           <p>
-            <u>Mar 31, 2026</u>
+            <u>May 29, 2026</u>
             <br />
             <br />
-            <img className="news-img" src={countachPhoto.src}
-              alt="flyer for 34 Trolley debut live performance at God's Autobody" />
+            <img className="news-img-white-border" src={ftf002Label.src}
+              alt="vinyl label for Countach - Power - EP - FTF-002" />
             <br />
-            Announcing “Power - EP” by Philadelphia based producer Countach (aka Zach Fairbrother formerly of digital hardcore band GHÖSH). The EP, which marks the second release from Feel The Four Records, is dark, heavy big room Techno with a healthy dose of Acid and shades of 90s Big Beat. The propulsive first track, “Any Other Way (feat Morgan Garrett),” is streaming now on Bandcamp and YouTube. Pre-orders for the 12” vinyl EP (out May 8) are available at <a href="https://countach1985.bandcamp.com/album/power-ep" target="_blank" rel="noopener noreferrer">countach1985.bandcamp.com/album/power-ep</a>.
+            Countach "Power - EP" is officially out. 12” vinyl EP orders, direct from us, and full stream of the record are available at the bandcamp link below. Vinyl copies are also available to the world market including <a href="https://www.juno.co.uk/products/countach-power-ep-vinyl/1148126-01/" target="_blank" rel="noopener noreferrer">JUNO</a> in the UK and <a href="https://www.hhv.de/en/records/item/countach-power-ep-1388975" target="_blank" rel="noopener noreferrer">HHV</a> in Germany amoung others. <a href="https://countach1985.bandcamp.com/album/power-ep" target="_blank" rel="noopener noreferrer">countach1985.bandcamp.com/album/power-ep</a>.
           </p>
           <p className="margin-top-1rem">
             <Link href="/old-news">OLD NEWS</Link>

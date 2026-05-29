@@ -4,6 +4,7 @@ import LogoHeader from '../components/logo-header';
 import CartNav from '../components/cart-nav';
 import AddToCartButtonWDropdown from '../components/add-to-cart-w-dropdown';
 
+import countachPhoto from "../../../public/images/countach_peter-sherno_1.jpeg";
 import gonerFestFlyer from "../../../public/images/feelitgonerflyerBW.jpg";
 import godsFlyer from "../../../public/images/sep-5-flyer-new-info-2.jpg";
 import trolleyShirtFull from "../../../public/images/34_trolley_shirt_full.jpg";
@@ -18,6 +19,16 @@ export default function OldNews() {
         <p className="padding-left-1_3rem"><Link href="/">{`< HOME`}</Link></p>
         <section className="main-section">
           <h2>Old News</h2>
+          <p>
+            <u>Mar 31, 2026</u>
+            <br />
+            <br />
+            <img className="news-img" src={countachPhoto.src}
+              alt="black and white photo of the artist Countach" />
+            <br />
+            Announcing “Power - EP” by Philadelphia based producer Countach (aka Zach Fairbrother formerly of digital hardcore band GHÖSH). The EP, which marks the second release from Feel The Four Records, is dark, heavy big room Techno with a healthy dose of Acid and shades of 90s Big Beat. The propulsive first track, “Any Other Way (feat Morgan Garrett),” is streaming now on Bandcamp and YouTube. Pre-orders for the 12” vinyl EP (out May 8) are available at <a href="https://countach1985.bandcamp.com/album/power-ep" target="_blank" rel="noopener noreferrer">countach1985.bandcamp.com/album/power-ep</a>.
+          </p>
+          <br /><br />
           <p>
             <u>Jan 01, 2026</u>
             <br />

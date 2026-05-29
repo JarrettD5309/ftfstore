@@ -150,7 +150,7 @@ hr.dotted-hr {
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 @media screen and (max-width: 430px) {
