@@ -160,7 +160,7 @@ export default function Home() {
 
         <section className="main-section">
           <h2>About</h2>
-          <p>Feel The Feel Records is a dance music label from Philadelphia, PA started in 2024. Dance music is any music
+          <p>Feel The Four Records is a dance music label from Philadelphia, PA started in 2024. Dance music is any music
             you can dance to.</p>
           <p>Contact: feelthefourrecords@gmail.com</p>
           <p className="margin-top-2rem"><a className="link-button" href="https://www.instagram.com/feelthefourrecords"
